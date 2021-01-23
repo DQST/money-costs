@@ -1,0 +1,35 @@
+.wallet {
+    --f7-card-margin-vertical: 41px;
+    --f7-card-box-shadow: 1px 3px 6px 3px rgba(0, 0, 0, 0.1);
+    --f7-card-border-radius: 15px;
+}
+
+.wallet .card-content {
+    font-size: 30px;
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.wallet .card-header::after {
+    height: 0;
+}
+
+.wallet .card-footer::before {
+    height: 0;
+}
+
+.wallet .name {
+    display: flex;
+    gap: 5px;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    fill: #C4C4C4;
+}
+
+.main {
+    fill: #A5E771;
+}
