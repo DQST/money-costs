@@ -1,3 +1,19 @@
 .navbar-main-page {
     --f7-navbar-height: 81px;
 }
+
+.date {
+    text-align: right;
+    --f7-block-title-text-color: #c4c4c4;
+}
+
+.create-transaction {
+    --f7-fab-size: 90px;
+    --f7-theme-color: #6EB1EE;
+}
+
+.create-transaction svg {
+    width: 60px;
+    height: 60px;
+    fill: white;
+}

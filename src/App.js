@@ -3,7 +3,7 @@ import { App, View } from 'framework7-react';
 import { MainPage } from 'pages';
 
 export default () => (
-  <App theme="auto" name="Money Costs" id="com.demoapp.test">
+  <App theme="ios" name="Money Costs" id="com.demoapp.test">
     <View main>
       <MainPage/>
     </View>
