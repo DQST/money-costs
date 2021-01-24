@@ -1,11 +1,13 @@
 import React from 'react';
-import { App, View } from 'framework7-react';
-import { MainPage } from 'pages';
+import { App as F7App, View } from 'framework7-react';
+import config from 'app-config';
+import './styles.css';
 
-export default () => (
-  <App theme="ios" name="Money Costs" id="com.demoapp.test">
+const App = () => (
+  <F7App {...config}>
     <View main>
-      <MainPage/>
     </View>
-  </App>
-)
+  </F7App>
+);
+
+export default App;

@@ -10,10 +10,12 @@ import Framework7 from 'framework7/lite-bundle';
 
 // Import F7-React Plugin
 import Framework7React from 'framework7-react';
+import Framework7Keypad from 'framework7-plugin-keypad';
 import 'framework7/framework7-bundle.min.css';
 
 // Init F7-React Plugin
 Framework7.use(Framework7React);
+Framework7.use(Framework7Keypad);
 
 ReactDOM.render(
   React.createElement(App),
