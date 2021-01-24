@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Navbar, Page } from 'framework7-react';
 import { Wallet } from 'components';
+import { CreateWallet } from 'containers';
 import db from "db";
 
 const WalletsPage = () => {
@@ -21,7 +22,7 @@ const WalletsPage = () => {
                 title="Кошельки"
                 className="navbar-page"
             >
-                <Link slot="right" style={{fontSize: '30px'}}>+</Link>
+                <Link slot="right" style={{fontSize: '30px'}} sheetOpen='.create-wallet'>+</Link>
             </Navbar>
             <br/>
             {!wallets.length && 
@@ -32,6 +33,7 @@ const WalletsPage = () => {
             {wallets.map(wallet => 
                 <Wallet name={wallet.name} balance={wallet.balance}/>
             )}
+            <CreateWallet id='create-wallet'/>
         </Page>
     );
 };
