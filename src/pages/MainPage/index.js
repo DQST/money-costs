@@ -1,9 +1,8 @@
 import React from 'react';
 import { Page, Navbar, NavLeft, BlockTitle, Fab } from 'framework7-react';
 import { Avatar, Wallet, TransactionList } from 'components';
-import SVG from 'react-inlinesvg';
-import AddIcon from "Icons/Add.svg";
 import Me from 'me.jpg';
+import { AiOutlinePlus } from 'react-icons/ai';
 import './styles.css';
 
 
@@ -23,7 +22,7 @@ const MainPage = () => (
         <BlockTitle className={'date'}>Сегодня</BlockTitle>
         <TransactionList/>
         <Fab position="right-bottom" slot="fixed" className={'create-transaction'}>
-            <SVG src={AddIcon} alt="Create transaction"/>
+            <AiOutlinePlus/>
         </Fab>
     </Page>
 );
