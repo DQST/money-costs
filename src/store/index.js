@@ -27,18 +27,16 @@ export default class Store {
         });
     }
 
-    async addWallet(name, currency_id, balance) {
+    addWallet = async obj  => {
         const now = Date.now();
         const wallet = {
-            name,
-            currency_id,
-            balance,
+            ...obj,
             created_at: now,
             updated_at: now,
         };
         await db.wallet.add(wallet);
         runInAction(() => {
-            this._wallets = [wallet, ...this._wallets];
+            this._wallets.push(wallet);
         });
     }
 
@@ -48,6 +46,10 @@ export default class Store {
 
     get currencies() {
         return toJS(this._currencies);
+    }
+
+    get categories() {
+        return toJS(this._categories);
     }
 
     get userId() {

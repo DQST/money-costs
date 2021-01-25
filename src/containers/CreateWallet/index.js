@@ -9,7 +9,7 @@ import { observer } from 'mobx-react-lite';
 const defaultState = {
     name: '',
     balance: 0,
-    currency_id: 24,
+    symbol: '',
 };
 
 const CreateWallet = observer(({id}) => {
@@ -22,8 +22,7 @@ const CreateWallet = observer(({id}) => {
     };
 
     const onClick = () => {
-        state.currency_id = parseInt(state.currency_id);
-        store.addWallet(state.name, state.currency_id, state.balance);
+        store.addWallet(state);
         setState(defaultState);
     };
 
@@ -40,15 +39,15 @@ const CreateWallet = observer(({id}) => {
                     <FaWallet slot='media' size='30px'/>
                 </ListInput>
                 <ListInput
-                    value={state.currency_id}
+                    value={state.symbol}
                     type='select'
-                    name='currency_id'
+                    name='symbol'
                     placeholder='Валюта'
                     onInput={onInput}
                 >
                     <GrCurrency slot='media' size='30px'/>
-                    {store.currencies.map(({id, cc}) =>
-                        <option key={id} value={id}>{cc}</option>
+                    {store.currencies.map(({id, cc, symbol}) =>
+                        <option key={id} value={symbol}>{cc}</option>
                     )}
                 </ListInput>
                 <ListInput

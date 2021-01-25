@@ -11,11 +11,11 @@ const Wallet = ({ name, balance, symbol }) => (
         <CardHeader>
             <div className={'name'}>
                 <SVG src={WalletIcon} className={'icon main'} alt='wallet icon'/>
-                {name} {symbol}
+                {name}
             </div>
         </CardHeader>
         <CardContent>
-            {balance}
+            {`${balance} ${symbol ?? ''}`}
         </CardContent>
         <CardFooter>
             <SVG src={FilterIcon} className={'icon'} alt='filter icon'/>

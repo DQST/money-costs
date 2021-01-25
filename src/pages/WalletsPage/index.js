@@ -20,9 +20,11 @@ const WalletsPage = observer(() => {
                 <Link slot="right" style={{fontSize: '30px'}} sheetOpen='.create-wallet'>+</Link>
             </Navbar>
             <br/>
-            {store.wallets.map(({id, name, balance, symbol}) => 
-                <Wallet key={id} name={name} balance={balance} symbol={symbol}/>
-            )}
+            <div>
+                {store.wallets.reverse().map(({id, name, balance, symbol}) => 
+                    <Wallet key={id} name={name} balance={balance} symbol={symbol}/>
+                )}
+            </div>
             <CreateWallet id='create-wallet'/>
         </Page>
     );
