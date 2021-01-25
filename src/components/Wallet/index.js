@@ -6,12 +6,12 @@ import FilterIcon from 'Icons/Filter.svg';
 import './styles.css';
 
 
-const Wallet = ({ name, balance }) => (
+const Wallet = ({ name, balance, symbol }) => (
     <Card className={'wallet'}>
         <CardHeader>
             <div className={'name'}>
                 <SVG src={WalletIcon} className={'icon main'} alt='wallet icon'/>
-                {name}
+                {name} {symbol}
             </div>
         </CardHeader>
         <CardContent>

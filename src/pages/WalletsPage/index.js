@@ -2,16 +2,11 @@ import React from 'react';
 import { Link, Navbar, Page } from 'framework7-react';
 import { Wallet } from 'components';
 import { CreateWallet } from 'containers';
-import db from "db";
+import { StoreContext } from 'contexts/store-context';
+import { observer } from 'mobx-react-lite';
 
-const WalletsPage = () => {
-    const [wallets, setWallets] = React.useState([]);
-    React.useEffect(() => {
-        db.wallet.toArray().then(data => {
-            console.log(`Loaded ${data.length} wallets`);
-            setWallets(data);
-        });
-    }, []);
+const WalletsPage = observer(() => {
+    const store = React.useContext(StoreContext);
 
     return (
         <Page>
@@ -25,17 +20,17 @@ const WalletsPage = () => {
                 <Link slot="right" style={{fontSize: '30px'}} sheetOpen='.create-wallet'>+</Link>
             </Navbar>
             <br/>
-            {!wallets.length && 
+            {!store.wallets.length && 
                 <h1 className="center-content">
                     Нет кошельков
                 </h1>
             }
-            {wallets.map(wallet => 
-                <Wallet name={wallet.name} balance={wallet.balance}/>
+            {store.wallets.map(({id, name, balance, symbol}) => 
+                <Wallet key={id} name={name} balance={balance} symbol={symbol}/>
             )}
             <CreateWallet id='create-wallet'/>
         </Page>
     );
-};
+});
 
 export default WalletsPage;

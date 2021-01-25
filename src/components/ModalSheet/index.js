@@ -9,6 +9,7 @@ const ModalSheet = ({id, children, position = 'bottom'}) => (
         swipeToClose
         position={position}
         className={id}
+        style={{height: '300px'}}
     >
         <Toolbar>
             <div></div>
