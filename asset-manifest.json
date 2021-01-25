@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/money-costs/static/css/main.1586af94.chunk.css",
+    "main.js": "/money-costs/static/js/main.ab88dede.chunk.js",
+    "main.js.map": "/money-costs/static/js/main.ab88dede.chunk.js.map",
+    "runtime-main.js": "/money-costs/static/js/runtime-main.4794fc04.js",
+    "runtime-main.js.map": "/money-costs/static/js/runtime-main.4794fc04.js.map",
+    "static/css/2.ba19d85e.chunk.css": "/money-costs/static/css/2.ba19d85e.chunk.css",
+    "static/js/2.9a361837.chunk.js": "/money-costs/static/js/2.9a361837.chunk.js",
+    "static/js/2.9a361837.chunk.js.map": "/money-costs/static/js/2.9a361837.chunk.js.map",
+    "static/js/3.9f2bd8db.chunk.js": "/money-costs/static/js/3.9f2bd8db.chunk.js",
+    "static/js/3.9f2bd8db.chunk.js.map": "/money-costs/static/js/3.9f2bd8db.chunk.js.map",
+    "index.html": "/money-costs/index.html",
+    "service-worker.js": "/money-costs/service-worker.js",
+    "service-worker.js.map": "/money-costs/service-worker.js.map",
+    "static/css/2.ba19d85e.chunk.css.map": "/money-costs/static/css/2.ba19d85e.chunk.css.map",
+    "static/css/main.1586af94.chunk.css.map": "/money-costs/static/css/main.1586af94.chunk.css.map",
+    "static/js/2.9a361837.chunk.js.LICENSE.txt": "/money-costs/static/js/2.9a361837.chunk.js.LICENSE.txt",
+    "static/media/Filter.f058619d.svg": "/money-costs/static/media/Filter.f058619d.svg",
+    "static/media/Wallet.92619cc5.svg": "/money-costs/static/media/Wallet.92619cc5.svg",
+    "static/media/book.17296db8.svg": "/money-costs/static/media/book.17296db8.svg",
+    "static/media/cloth.6cf8a1f0.svg": "/money-costs/static/media/cloth.6cf8a1f0.svg",
+    "static/media/coffee.6c5e9f89.svg": "/money-costs/static/media/coffee.6c5e9f89.svg",
+    "static/media/fast-food.6de83ed6.svg": "/money-costs/static/media/fast-food.6de83ed6.svg",
+    "static/media/gift.c685f3d9.svg": "/money-costs/static/media/gift.c685f3d9.svg",
+    "static/media/groceries.959478da.svg": "/money-costs/static/media/groceries.959478da.svg",
+    "static/media/gym.23cb449d.svg": "/money-costs/static/media/gym.23cb449d.svg",
+    "static/media/me.e4c07de8.jpg": "/money-costs/static/media/me.e4c07de8.jpg",
+    "static/media/mortgage.c0a2c9a8.svg": "/money-costs/static/media/mortgage.c0a2c9a8.svg",
+    "static/media/movie.e2f2eea8.svg": "/money-costs/static/media/movie.e2f2eea8.svg",
+    "static/media/public-transport.dd4ae01a.svg": "/money-costs/static/media/public-transport.dd4ae01a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4794fc04.js",
+    "static/css/2.ba19d85e.chunk.css",
+    "static/js/2.9a361837.chunk.js",
+    "static/css/main.1586af94.chunk.css",
+    "static/js/main.ab88dede.chunk.js"
+  ]
+}
