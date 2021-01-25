@@ -8,7 +8,7 @@ import { observer } from 'mobx-react-lite';
 
 const defaultState = {
     name: '',
-    balance: 0,
+    balance: '',
     symbol: '',
 };
 
@@ -46,21 +46,22 @@ const CreateWallet = observer(({id}) => {
                     onInput={onInput}
                 >
                     <GrCurrency slot='media' size='30px'/>
-                    {store.currencies.map(({id, cc, symbol}) =>
-                        <option key={id} value={symbol}>{cc}</option>
+                    {store.currencies.map(({id, cc, symbol, name}) =>
+                        <option key={id} value={symbol}>{cc} {name}</option>
                     )}
                 </ListInput>
                 <ListInput
                     value={state.balance}
-                    type='text'
+                    type='number'
+                    inputmode="decimal"
                     name='balance'
                     placeholder='Баланс'
                     onInput={onInput}
                 />
             </List>
             <Block>
-                <Button type='submit' onClick={onClick} fill sheetClose={`.${id}`}>
-                    Сохранить кошелёк
+                <Button onClick={onClick} fill sheetClose={`.${id}`}>
+                    Создать кошелёк
                 </Button>
             </Block>
         </ModalSheet>
