@@ -8,7 +8,7 @@ import moment from "moment";
 const defaultState = {
     value: '',
     type: 'расход',
-    category: 'Кофе',
+    category: 'Одежда',
     created_at: moment().format('y-MM-DD'),
 };
 
@@ -45,6 +45,7 @@ const CreateTransaction = observer(({id}) => {
                 />
                 <ListInput
                     value={state.category}
+                    label="Категория"
                     type='select'
                     name='category'
                     placeholder='Категория'
@@ -56,9 +57,10 @@ const CreateTransaction = observer(({id}) => {
                 </ListInput>
                 <ListInput
                     value={state.type}
+                    label="Тип"
                     type='select'
                     name='type'
-                    placeholder='Тип'
+                    placeholder='Укажите тип'
                     onInput={onInput}
                 >
                     <option value='расход'>Расход</option>

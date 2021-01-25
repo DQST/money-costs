@@ -7,6 +7,7 @@ export default class Store {
     _wallets = []
     _currencies = []
     _categories = []
+    _icons = {}
     _activeWallet = 0
     _activeWalletTransactions = []
 
@@ -26,7 +27,9 @@ export default class Store {
             this._currencies = currencies;
             this._categories = categories;
             this._wallets = wallets;
+            this._icons = categories.reduce((acc, {name, icon}) => ({...acc, [name]: icon}), {});
         });
+        this.setActiveWallet(0);
     }
 
     addWallet = async obj  => {
@@ -59,7 +62,7 @@ export default class Store {
         });
     }
 
-    set activeWallet(index) {
+    setActiveWallet(index) {
         this._activeWalletTransactions = [];
         this._activeWallet = index;
         const wallet_id = this._wallets[this._activeWallet].id;
@@ -71,7 +74,7 @@ export default class Store {
     }
 
     get activeWalletTransactions() {
-        return toJS(this._activeWalletTransactions);
+        return toJS(this._activeWalletTransactions).reverse();
     }
 
     get wallets() {
@@ -88,5 +91,9 @@ export default class Store {
 
     get userId() {
         return this._user.id;
+    }
+
+    get icons() {
+        return toJS(this._icons);
     }
 }

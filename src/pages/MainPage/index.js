@@ -9,11 +9,10 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import './styles.css';
 
 
-
 const MainPage = observer(() => {
     const store = React.useContext(StoreContext);
     const onSlideChange = ({activeIndex}) => {
-        store.activeWallet = activeIndex;
+        store.setActiveWallet(activeIndex);
     };
 
     const showSheet = () => {

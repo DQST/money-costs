@@ -1,24 +1,30 @@
 import React from "react";
 import { List, ListItem } from 'framework7-react';
+import { StoreContext } from 'contexts/store-context';
+import { observer } from "mobx-react-lite";
+import moment from 'moment';
 import SVG from 'react-inlinesvg';
-import db from "db";
 
 
-const TransactionList = ({transactions}) => {
-    const [tr, setTr] = React.useState(null);
-    React.useEffect(() => {
-        db.category.toArray(setTr);
-    }, []);
+const TransactionList = observer(() => {
+    const store = React.useContext(StoreContext);
     return (
         <List mediaList inset>
-            {tr && tr.map(({id, name, icon}) => 
-                <ListItem key={id} title={name} subtitle="11:32">
-                    <SVG slot="media" src={icon} width={40} height={40}></SVG>
-                    <span slot="after">-4,3 p.</span>
-                </ListItem>
-            )}
+            {store.activeWalletTransactions.map(({category, type, created_at, value}) => {
+                const valueText = type === 'расход' ? `-${value}` : value;
+                const created = moment(created_at);
+                const time = created.format('HH:mm');
+                const icon = store.icons[category];
+
+                return (
+                    <ListItem title={category} subtitle={time}>
+                        <SVG slot="media" src={icon} width={40} height={40}></SVG>
+                        <span slot="after">{valueText} p.</span>
+                    </ListItem>
+                );
+            })}
         </List>
     );
-};
+});
 
 export default TransactionList;
