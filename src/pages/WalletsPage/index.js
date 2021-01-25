@@ -20,11 +20,6 @@ const WalletsPage = observer(() => {
                 <Link slot="right" style={{fontSize: '30px'}} sheetOpen='.create-wallet'>+</Link>
             </Navbar>
             <br/>
-            {!store.wallets.length && 
-                <h1 className="center-content">
-                    Нет кошельков
-                </h1>
-            }
             {store.wallets.map(({id, name, balance, symbol}) => 
                 <Wallet key={id} name={name} balance={balance} symbol={symbol}/>
             )}

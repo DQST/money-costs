@@ -1,13 +1,11 @@
 import React from 'react';
 import { List, ListItem, Navbar, Page } from 'framework7-react';
-import db from 'db';
+import {StoreContext} from 'contexts/store-context';
+import { observer } from 'mobx-react-lite';
 
 
-const CurrenciesPage = () => {
-    const [currencies, setCurrencies] = React.useState(null);
-    React.useEffect(() => {
-        db.currency.toArray().then(setCurrencies);
-    }, []);
+const CurrenciesPage = observer(() => {
+    const store = React.useContext(StoreContext);
 
     return (
         <Page>
@@ -19,12 +17,12 @@ const CurrenciesPage = () => {
                 className="navbar-page"
             />
             <List>
-                {currencies && currencies.map(({id, cc, name, symbol}) => 
+                {store.currencies.map(({id, cc, name, symbol}) => 
                     <ListItem key={id} title={`[${cc}] ${name}`} after={symbol}/>
                 )}
             </List>
         </Page>
     );
-};
+});
 
 export default CurrenciesPage;
