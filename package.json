@@ -13,6 +13,7 @@
     "framework7-react": "^6.0.4",
     "mobx": "^6.0.5",
     "mobx-react-lite": "^3.1.7",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
