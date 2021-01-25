@@ -7,6 +7,8 @@ export default class Store {
     _wallets = []
     _currencies = []
     _categories = []
+    _activeWallet = 0
+    _activeWalletTransactions = []
 
     constructor() {
         makeAutoObservable(this);
@@ -38,6 +40,38 @@ export default class Store {
         runInAction(() => {
             this._wallets.push(wallet);
         });
+    }
+
+    addTransaction = async obj => {
+        await db.walletTransactions.add({
+            ...obj,
+            wallet_id: this.activeWallet,
+        });
+        runInAction(() => {
+            this._activeWalletTransactions.push(obj);
+        });
+    }
+
+    fetchTransactions = async wallet_id => {
+        const transactions = await db.walletTransactions.where({wallet_id}).sortBy('created_at');
+        runInAction(() => {
+            this._activeWalletTransactions = transactions;
+        });
+    }
+
+    set activeWallet(index) {
+        this._activeWalletTransactions = [];
+        this._activeWallet = index;
+        const wallet_id = this._wallets[this._activeWallet].id;
+        this.fetchTransactions(wallet_id);
+    }
+
+    get activeWallet() {
+        return this._wallets[this._activeWallet].id;
+    }
+
+    get activeWalletTransactions() {
+        return toJS(this._activeWalletTransactions);
     }
 
     get wallets() {
